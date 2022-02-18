@@ -9,13 +9,12 @@ namespace ConsoleApp3
     {
         private static void Main(string[] args)
         {
-            //Lägga till i game
-
+          
 
             Console.WriteLine("Mata in punkten (X,Y)");
             var inputDot = Console.ReadLine();
 
-            //"shape ,X,Y,LENGTH ,POINTS;CIRCLE ,3,1,13,100; CIRCLE ,1,-1,15,200; square, -1 ,0 ,20 ,300; SQUARE , -3 ,2 ,8 ,400;";
+            //shape ,X,Y,LENGTH ,POINTS;CIRCLE ,3,1,13,100; CIRCLE ,1,-1,15,200; square, -1 ,0 ,20 ,300; SQUARE , -3 ,2 ,8 ,400;
 
 
             Console.WriteLine("Mata in värdena");
@@ -37,7 +36,7 @@ namespace ConsoleApp3
             var inputDotY = Convert.ToInt32(dotValue[1]);
 
 
-            //Header
+            // Header
             var startIndexHeader = 0;
             var lengthIndexHeader = 23;
 
@@ -48,7 +47,6 @@ namespace ConsoleApp3
 
             var substringVariables = trimmed;
 
-            //string[] listVariables = Regex.Split(substringVariables, @";|,");
             var listVariables = Regex.Split(substringVariables, @";");
 
 
@@ -71,19 +69,19 @@ namespace ConsoleApp3
             // Remove last array
             values.RemoveAt(values.Count - 1);
 
-            var counterRow = 0;
-            foreach (var item in values)
-            {
-                var counterCol = 0;
-                Console.WriteLine("Row " + counterRow);
-                foreach (var i in item)
-                {
-                    Console.WriteLine("Col " + counterCol + " " + i);
-                    counterCol++;
-                }
+            //var counterRow = 0;
+            //foreach (var item in values)
+            //{
+            //    var counterCol = 0;
+            //    Console.WriteLine("Row " + counterRow);
+            //    foreach (var i in item)
+            //    {
+            //        Console.WriteLine("Col " + counterCol + " " + i);
+            //        counterCol++;
+            //    }
 
-                counterRow++;
-            }
+            //    counterRow++;
+            //}
 
 
             var shapeCircle = new List<Circle>();
@@ -125,7 +123,7 @@ namespace ConsoleApp3
                 else
                     missSquare.Add(s.shapeScore());
 
-            //Presenterar poängresultatet för spelet
+            // Presentation of the game result
             var game = new Game(missCircle, missSquare, hitSquare, hitCircle);
             Console.WriteLine("Poängresultat: " + game.score);
         }
