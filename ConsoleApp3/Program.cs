@@ -42,10 +42,7 @@ namespace ConsoleApp3
 
             var headerVariables = Regex.Split(substringHeader, @",|;");
 
-
-            var substringVariables = concatString;
-
-            var listVariables = Regex.Split(substringVariables, @";");
+            var listVariables = Regex.Split(concatString, @";");
 
 
             var indexShape = Array.FindIndex(headerVariables, row => row.Contains("SHAPE"));
