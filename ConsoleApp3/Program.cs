@@ -24,9 +24,7 @@ namespace ConsoleApp3
 
             var trimmedInputDot = inputDot.Substring(1, inputDot.Length - 2);
 
-            Console.WriteLine(trimmedInputDot);
-
-            var trimmed = string.Concat(stringInput.Where(c => !char.IsWhiteSpace(c)));
+            var concatString = string.Concat(stringInput.Where(c => !char.IsWhiteSpace(c)));
 
 
             var dotValue = Regex.Split(trimmedInputDot, @",");
@@ -40,12 +38,12 @@ namespace ConsoleApp3
             var startIndexHeader = 0;
             var lengthIndexHeader = 23;
 
-            var substringHeader = trimmed.Substring(startIndexHeader, lengthIndexHeader);
+            var substringHeader = concatString.Substring(startIndexHeader, lengthIndexHeader);
 
             var headerVariables = Regex.Split(substringHeader, @",|;");
 
 
-            var substringVariables = trimmed;
+            var substringVariables = concatString;
 
             var listVariables = Regex.Split(substringVariables, @";");
 
